@@ -1,5 +1,6 @@
 import './Movie.css';
-export interface MovieProps {
+
+type Props = {
     year:number;
     title:string;
     summary:string;
@@ -7,16 +8,16 @@ export interface MovieProps {
     genres:Array<string>;
 }
 
-export default function Movie (props: MovieProps) {
+export default function Movie ({year,title,poster,genres,summary}: Props) {
     return (
         <div className="movie">
-            <img src={props.poster} alt={props.title} title={props.title}></img>
+            <img src={poster} alt={title} title={title}></img>
             <div className="movie_data">
-                <h3 className="movie_title">{props.title}</h3>
-                <h5 className="movie_year">{props.year}</h5>
-                <p className="movie_summary">{props.summary.slice(0,180)}</p>
+                <h3 className="movie_title">{title}</h3>
+                <h5 className="movie_year">{year}</h5>
+                <p className="movie_summary">{summary.slice(0,180)}</p>
                 <ul className='movie_genres'>
-                    {props.genres.map((genre,index)=>{
+                    {genres.map((genre,index)=>{
                         return <li key={index} className='movie_genre'>{genre}</li>;
                     })}
                 </ul>
