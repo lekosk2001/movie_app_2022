@@ -1,6 +1,7 @@
 import axios from "axios";
 import { useState,useEffect } from "react";
 import Movie from './Movie'
+import './App.css';
 
 export default function App() {
 	const [isLoading, setIsLoading] = useState<boolean>(true)
@@ -9,7 +10,8 @@ export default function App() {
 		year:0,
 		title:"",
 		summary:"",
-		poster:""
+		medium_cover_image:"",
+		genres:[""]
 	}]);
 
 	const getMoives = async()=>{
@@ -17,7 +19,7 @@ export default function App() {
 			data : {
 				data:{movies},
 			},
-		} = await axios.get('https://yts-proxy.now.sh/list_movies.json?sort_by=year)');
+		} = await axios.get('https://yts-proxy.now.sh/list_movies.json?sort_by=rating)');
 		setStateMovies(movies)
 		setIsLoading(false)
 	}
@@ -38,13 +40,14 @@ export default function App() {
 					<div className="movies">{
 						stateMovies.map(
 							(movie)=>{
+								console.log(movie)
 								return <Movie
 									key={movie.id}
-									id={movie.id}
 									year={movie.year}
 									title={movie.title}
 									summary={movie.summary}
-									poster={movie.poster}
+									poster={movie.medium_cover_image}
+									genres={movie.genres}
 								/>
 							}
 						)
