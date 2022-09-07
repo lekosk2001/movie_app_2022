@@ -1,7 +1,9 @@
 import React from 'react'
 import './About.css'
 
-export default function About() {
+type Props = {}
+
+export default function About(props:Props) {
     return (
         <div className='about_container'>
             <span>

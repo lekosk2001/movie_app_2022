@@ -19,7 +19,7 @@ export default function Home() {
 			data : {
 				data:{movies},
 			},
-		} = await axios.get('https://yts-proxy.now.sh/list_movies.json?sort_by=rating)');
+		} = await axios.get('https://yts-proxy.now.sh/list_movies.json)');
 		setStateMovies(movies)
 		setIsLoading(false)
 	}
