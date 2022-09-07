@@ -13,7 +13,7 @@ return (
 		<Routes>
 			<Route path='/' element={<Home />} />
 			<Route path='/about' element={<About />} />
-			<Route path='/movie-detail' element={<Detail location="" navigate=""/>} />
+			<Route path='/movie-detail' element={<Detail />} />
 		</Routes>
 	</BrowserRouter>
 	);
