@@ -1,13 +1,18 @@
 import React from 'react';
-// import Home from './routes/Home';
 import './App.css';
-import { HashRouter,Route } from 'react-router-dom';
+import { BrowserRouter,Routes,Route } from 'react-router-dom';
+import Home from './routes/Home';
 import About from './routes/About';
+import Navigation from './components/Navigation';
 
 export default function App() {
 return (
-	<HashRouter>
-		<Route path='/about'/>
-	</HashRouter>
-);
+	<BrowserRouter>
+		<Navigation/>
+		<Routes>
+			<Route path='/' element={<Home />} />
+			<Route path='/about' element={<About />} />
+		</Routes>
+	</BrowserRouter>
+	);
 }

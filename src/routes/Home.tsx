@@ -40,7 +40,6 @@ export default function Home() {
 					<div className="movies">{
 						stateMovies.map(
 							(movie)=>{
-								console.log(movie)
 								return <Movie
 									key={movie.id}
 									year={movie.year}
