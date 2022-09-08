@@ -31,8 +31,22 @@ export default function Detail (props: Props) {
     if(state){   
         return (
             <div className='detail_wrapper'>
-                <h4>{state.title}</h4>
-                <p>{state.summary}</p>
+                <div className='img_wrapper'>                
+                    <img src={state.poster} alt={state.title} title={state.title}></img>
+                </div>
+                <div className='detail_desc_wrapper'>
+                    <div className='detail_title_wrapper'>
+                        <h4>{state.title}</h4>
+                        <p>{state.year}</p>
+                    </div>
+                    <ul className='movie_genres'>
+                        {state.genres.map((genre,index)=>{
+                            return <li key={index} className='movie_genre'>{genre}</li>;
+                        })}
+                    </ul>
+                    <p>{state.summary}</p>
+                </div>
+
             </div>
         )
     }
