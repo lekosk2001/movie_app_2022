@@ -11,9 +11,9 @@ return (
 	<BrowserRouter>
 		<Navigation/>
 		<Routes>
-			<Route path='/' element={<Home />} />
-			<Route path='/about' element={<About />} />
-			<Route path='/movie-detail' element={<Detail />} />
+			<Route path='/movie_app_2022' element={<Home />} />
+			<Route path='/movie_app_2022/about' element={<About />} />
+			<Route path='/movie_app_2022/movie-detail' element={<Detail />} />
 		</Routes>
 	</BrowserRouter>
 	);

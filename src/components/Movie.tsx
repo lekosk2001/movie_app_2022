@@ -14,7 +14,7 @@ export default function Movie ({year,title,poster,genres,summary}: Props) {
 
     return (
         <div className="movie">
-            <Link to="/movie-detail" state={{year,title,summary,poster,genres}}>
+            <Link to="/movie_app_2022/movie-detail" state={{year,title,summary,poster,genres}}>
                 <img src={poster} alt={title} title={title}></img>
                 <div className="movie_data">
                     <h3 className="movie_title">{title}</h3>
